@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Automator</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: #1e1e2e;
+      --accent: #7c6aff;
+      --accent2: #ff6a9d;
+      --text: #e8e8f0;
+      --muted: #5a5a72;
+      --success: #4ade80;
+      --error: #ff6a6a;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    /* Background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    /* Glow blobs */
+    body::after {
+      content: '';
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(124,106,255,0.12) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 520px;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Card */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    /* Field groups */
+    .field-group {
+      margin-bottom: 1.75rem;
+    }
+
+    .field-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .field-label .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124,106,255,0.15);
+    }
+
+    input::placeholder { color: var(--muted); }
+
+    /* Code inputs row */
+    .code-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.5rem;
+    }
+
+    .code-grid input {
+      text-align: center;
+      padding: 0.85rem 0.25rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    .code-hint {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.75rem 0;
+    }
+
+    /* Run button */
+    .run-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .run-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(124,106,255,0.4);
+    }
+
+    .run-btn:active { transform: translateY(0); }
+
+    .run-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .run-btn .btn-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    /* Spinner */
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    /* Status */
+    .status {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      display: none;
+      align-items: center;
+      gap: 0.6rem;
+      animation: fadeUp 0.3s ease both;
+    }
+
+    .status.success {
+      background: rgba(74,222,128,0.08);
+      border: 1px solid rgba(74,222,128,0.25);
+      color: var(--success);
+      display: flex;
+    }
+
+    .status.error {
+      background: rgba(255,106,106,0.08);
+      border: 1px solid rgba(255,106,106,0.25);
+      color: var(--error);
+      display: flex;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      animation: fadeUp 0.6s ease 0.2s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">⚡ Automation Tool</div>
+      <h1>Form<br/>Runner</h1>
+      <p class="subtitle">Fill in your details and let the bot do the rest.</p>
+    </div>
+
+    <div class="card">
+
+      <!-- Survey Code -->
+      <div class="field-group">
+        <div class="field-label"><span class="dot"></span> Survey Access Code</div>
+        <div class="code-grid">
+          <input type="text" id="cn1" maxlength="4" placeholder="1–4"   oninput="handleCodeInput(this, 'cn2')"/>
+          <input type="text" id="cn2" maxlength="4" placeholder="5–8"   oninput="handleCodeInput(this, 'cn3')"/>
+          <input type="text" id="cn3" maxlength="4" placeholder="9–12"  oninput="handleCodeInput(this, 'cn4')"/>
+          <input type="text" id="cn4" maxlength="4" placeholder="13–16" oninput="handleCodeInput(this, 'cn5')"/>
+          <input type="text" id="cn5" maxlength="4" placeholder="17–20" oninput="handleCodeInput(this, 'cn6')"/>
+          <input type="text" id="cn6" maxlength="4" placeholder="21–24" oninput="handleCodeInput(this, null)"/>
+        </div>
+        <p class="code-hint">Enter your 24-character code across all 6 boxes</p>
+      </div>
+
+      <hr class="divider"/>
+
+      <!-- Email -->
+      <div class="field-group">
+        <div class="field-label"><span class="dot"></span> Email Address</div>
+        <input type="email" id="email" placeholder="you@example.com"/>
+      </div>
+
+      <!-- Run Button -->
+      <button class="run-btn" id="runBtn" onclick="runAutomation()">
+        <span class="btn-inner">
+          <div class="spinner" id="spinner"></div>
+          <span id="btnText">Run Automation</span>
+        </span>
+      </button>
+
+      <!-- Status -->
+      <div class="status" id="status"></div>
+
+    </div>
+
+    <div class="footer">FORM AUTOMATOR &nbsp;·&nbsp; POWERED BY PLAYWRIGHT</div>
+  </div>
+
+  <script>
+    function handleCodeInput(el, nextId) {
+      if (el.value.length === 4 && nextId) {
+        document.getElementById(nextId).focus();
+      }
+    }
+
+    async function runAutomation() {
+      const cn1 = document.getElementById('cn1').value;
+      const cn2 = document.getElementById('cn2').value;
+      const cn3 = document.getElementById('cn3').value;
+      const cn4 = document.getElementById('cn4').value;
+      const cn5 = document.getElementById('cn5').value;
+      const cn6 = document.getElementById('cn6').value;
+      const email = document.getElementById('email').value;
+
+      const code = cn1 + cn2 + cn3 + cn4 + cn5 + cn6;
+
+      // Validate
+      if (code.length !== 24) {
+        showStatus('error', '✗ Please enter all 6 parts of your 24-character code.');
+        return;
+      }
+      if (!email || !email.includes('@')) {
+        showStatus('error', '✗ Please enter a valid email address.');
+        return;
+      }
+
+      // Set loading state
+      const btn = document.getElementById('runBtn');
+      btn.disabled = true;
+      document.getElementById('spinner').style.display = 'block';
+      document.getElementById('btnText').textContent = 'Running...';
+      hideStatus();
+
+      try {
+        const res = await fetch('/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code, email })
+        });
+        const data = await res.json();
+
+        if (data.status === 'success') {
+          showStatus('success', '✓ ' + data.message);
+        } else {
+          showStatus('error', '✗ ' + data.message);
+        }
+      } catch (err) {
+        showStatus('error', '✗ Could not connect to server. Is app.py running?');
+      }
+
+      btn.disabled = false;
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('btnText').textContent = 'Run Automation';
+    }
+
+    function showStatus(type, msg) {
+      const el = document.getElementById('status');
+      el.className = 'status ' + type;
+      el.textContent = msg;
+    }
+
+    function hideStatus() {
+      document.getElementById('status').className = 'status';
+    }
+  </script>
+</body>
+</html>
