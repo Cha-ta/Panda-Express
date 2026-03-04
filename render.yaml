@@ -3,7 +3,7 @@ services:
     name: form-automator
     runtime: python
     buildCommand: pip install -r requirements.txt && python -m playwright install chromium && python -m playwright install-deps chromium
-    startCommand: python app.py
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
