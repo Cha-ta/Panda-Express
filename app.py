@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify, render_template_string
-import csv
 import threading
 import os
+import subprocess
 
 app = Flask(__name__)
 
-HTML = open(os.path.join(os.path.dirname(__file__), 'index.html')).read()
+with open(os.path.join(os.path.dirname(__file__), 'index.html')) as f:
+    HTML = f.read()
 
 @app.route('/')
 def index():
@@ -14,42 +15,31 @@ def index():
 @app.route('/run', methods=['POST'])
 def run_form():
     data = request.json
-    email = data.get('email')
-    code = data.get('code')  # full 24-char code
+    email = data.get('email', '').strip()
+    code = data.get('code', '').strip()
 
-    # Split code into groups of 4
-    chunks = [code[i:i+4] for i in range(0, len(code), 4)]
-    if len(chunks) < 6:
-        return jsonify({'status': 'error', 'message': 'Code must be 24 characters long.'})
+    # Validate
+    if len(code) != 24:
+        return jsonify({'status': 'error', 'message': 'Code must be exactly 24 characters.'})
+    if not email or '@' not in email:
+        return jsonify({'status': 'error', 'message': 'Please enter a valid email address.'})
 
-    # Update CSV with new values
-    rows = []
-    with open('form_answers.csv', 'r') as f:
-        reader = list(csv.DictReader(f))
-        fieldnames = ['type', 'name', 'value', 'page']
-        for row in reader:
-            # Update code fields
-            for i, name in enumerate(['CN1','CN2','CN3','CN4','CN5','CN6']):
-                if row['name'] == name and row['type'] == 'text':
-                    row['value'] = chunks[i]
-            # Update email fields
-            if row['name'] in ['S000057', 'S000064'] and row['type'] == 'text':
-                row['value'] = email
-            rows.append(row)
-
-    with open('form_answers.csv', 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-
-    # Run the automation in background thread
+    # Run automation — pass email and code directly as arguments
+    # No CSV writing = no conflict between simultaneous users
     def run_script():
-        os.system('python3 script.py')
+        script_path = os.path.join(os.path.dirname(__file__), 'script.py')
+        subprocess.run([
+            'python3', script_path,
+            '--email', email,
+            '--code', code
+        ])
 
     thread = threading.Thread(target=run_script)
+    thread.daemon = True
     thread.start()
 
-    return jsonify({'status': 'success', 'message': 'Form automation started! Check the browser window.'})
+    return jsonify({'status': 'success', 'message': 'Automation started! The form is being filled out in the background.'})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
