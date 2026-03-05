@@ -2,8 +2,10 @@ services:
   - type: web
     name: form-automator
     runtime: python
-    buildCommand: pip install -r requirements.txt && python -m playwright install chromium && python -m playwright install-deps chromium
+    buildCommand: pip install -r requirements.txt && PLAYWRIGHT_BROWSERS_PATH=/opt/render/project/.playwright python -m playwright install --with-deps chromium
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: /opt/render/project/.playwright
