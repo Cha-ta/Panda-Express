@@ -28,11 +28,15 @@ def run_form():
     # No CSV writing = no conflict between simultaneous users
     def run_script():
         script_path = os.path.join(os.path.dirname(__file__), 'script.py')
-        subprocess.run([
-            'python3', script_path,
-            '--email', email,
-            '--code', code
-        ])
+        result = subprocess.run(
+            ['python3', script_path, '--email', email, '--code', code],
+            capture_output=True, text=True
+        )
+        print(f"[script.py] exit={result.returncode}")
+        if result.stdout:
+            print(f"[script.py stdout] {result.stdout}")
+        if result.stderr:
+            print(f"[script.py stderr] {result.stderr}")
 
     thread = threading.Thread(target=run_script)
     thread.daemon = True
