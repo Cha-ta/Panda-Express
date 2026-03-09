@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template_string
 import threading
 import os
+import sys
 import subprocess
 
 app = Flask(__name__)
@@ -29,7 +30,7 @@ def run_form():
     def run_script():
         script_path = os.path.join(os.path.dirname(__file__), 'script.py')
         result = subprocess.run(
-            ['python3', script_path, '--email', email, '--code', code],
+            [sys.executable, script_path, '--email', email, '--code', code],
             capture_output=True, text=True
         )
         print(f"[script.py] exit={result.returncode}")
