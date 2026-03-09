@@ -38,6 +38,10 @@ python -m playwright install chromium
 python3 script.py --email "your@email.com" --code "240640854263012301131206"
 ```
 
+```PowerShell
+python script.py --email "your@email.com" --code "240640854263012301131206"
+```
+
 - `--email` — Email address to receive the coupon code
 - `--code` — 24-digit survey code from your Panda Express receipt
 
