@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template_string, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, Response
 import threading
 import os
 import sys
@@ -11,7 +11,7 @@ with open(os.path.join(os.path.dirname(__file__), 'index.html')) as f:
 
 @app.route('/')
 def index():
-    return render_template_string(HTML)
+    return Response(HTML, mimetype='text/html')
 
 @app.route('/images/<filename>')
 def serve_image(filename):
