@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template_string
+from flask import Flask, request, jsonify, render_template_string, send_from_directory
 import threading
 import os
 import sys
@@ -12,6 +12,10 @@ with open(os.path.join(os.path.dirname(__file__), 'index.html')) as f:
 @app.route('/')
 def index():
     return render_template_string(HTML)
+
+@app.route('/images/<filename>')
+def serve_image(filename):
+    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), filename)
 
 @app.route('/run', methods=['POST'])
 def run_form():

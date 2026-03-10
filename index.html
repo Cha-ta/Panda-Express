@@ -3,25 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Form Automator</title>
+  <title>Survey Tool</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #0a0a0f;
-      --surface: #111118;
-      --border: #1e1e2e;
-      --accent: #7c6aff;
-      --accent2: #ff6a9d;
-      --text: #e8e8f0;
-      --muted: #5a5a72;
+      --surface: rgba(10, 20, 12, 0.88);
+      --border: #2a4a2e;
+      --accent: #4a9e57;
+      --accent2: #6aba6a;
+      --text: #f0f0f8;
+      --muted: #9a9ab0;
       --success: #4ade80;
       --error: #ff6a6a;
     }
 
     body {
-      background: var(--bg);
+      background-image: url('/images/pandaEating.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: var(--text);
       font-family: 'DM Mono', monospace;
       min-height: 100vh;
@@ -32,30 +35,13 @@
       overflow-x: hidden;
     }
 
-    /* Background grid */
+    /* Dark overlay for readability */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 48px 48px;
-      opacity: 0.4;
+      background: rgba(0, 0, 0, 0.55);
       z-index: 0;
-    }
-
-    /* Glow blobs */
-    body::after {
-      content: '';
-      position: fixed;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(124,106,255,0.12) 0%, transparent 70%);
-      top: -100px;
-      right: -100px;
-      z-index: 0;
-      pointer-events: none;
     }
 
     .container {
@@ -71,18 +57,6 @@
       animation: fadeUp 0.6s ease both;
     }
 
-    .badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      margin-bottom: 1rem;
-    }
-
     h1 {
       font-family: 'Syne', sans-serif;
       font-size: 2.8rem;
@@ -96,9 +70,13 @@
     }
 
     .subtitle {
-      color: var(--muted);
+      display: inline-block;
+      color: #d0d0e0;
       font-size: 0.8rem;
       letter-spacing: 0.05em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
     }
 
     /* Card */
@@ -159,7 +137,7 @@
     input[type="text"]:focus,
     input[type="email"]:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(124,106,255,0.15);
+      box-shadow: 0 0 0 3px rgba(74,158,87,0.25);
     }
 
     input::placeholder { color: var(--muted); }
@@ -212,7 +190,7 @@
 
     .run-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(124,106,255,0.4);
+      box-shadow: 0 8px 30px rgba(74,158,87,0.5);
     }
 
     .run-btn:active { transform: translateY(0); }
@@ -267,16 +245,6 @@
       display: flex;
     }
 
-    /* Footer */
-    .footer {
-      text-align: center;
-      margin-top: 1.5rem;
-      font-size: 0.65rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      animation: fadeUp 0.6s ease 0.2s both;
-    }
-
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -290,8 +258,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="badge">⚡ Automation Tool</div>
-      <h1>Form<br/>Runner</h1>
+      <h1>Survey Tool</h1>
       <p class="subtitle">Fill in your details and let the bot do the rest.</p>
     </div>
 
@@ -323,7 +290,7 @@
       <button class="run-btn" id="runBtn" onclick="runAutomation()">
         <span class="btn-inner">
           <div class="spinner" id="spinner"></div>
-          <span id="btnText">Run Automation</span>
+          <span id="btnText">Fill Out Survey</span>
         </span>
       </button>
 
@@ -331,8 +298,6 @@
       <div class="status" id="status"></div>
 
     </div>
-
-    <div class="footer">FORM AUTOMATOR &nbsp;·&nbsp; POWERED BY PLAYWRIGHT</div>
   </div>
 
   <script>
@@ -389,7 +354,7 @@
 
       btn.disabled = false;
       document.getElementById('spinner').style.display = 'none';
-      document.getElementById('btnText').textContent = 'Run Automation';
+      document.getElementById('btnText').textContent = 'Fill Out Survey';
     }
 
     function showStatus(type, msg) {
