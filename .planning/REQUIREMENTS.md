@@ -36,7 +36,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Visual Design
 
-- [ ] **DESIGN-01**: App uses dark theme with Panda Express branding matching current web UI
+- [x] **DESIGN-01**: App uses dark theme with Panda Express branding matching current web UI
 
 ### Deployment
 
@@ -93,7 +93,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LOG-01 | Phase 3 | Pending |
 | LOG-02 | Phase 3 | Pending |
 | LOG-03 | Phase 3 | Pending |
-| DESIGN-01 | Phase 1 | Pending |
+| DESIGN-01 | Phase 1 | Complete |
 | DEPLOY-01 | Phase 1 | Complete |
 
 **Coverage:**

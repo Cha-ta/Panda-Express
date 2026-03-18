@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 01-foundation-00-PLAN.md
-last_updated: "2026-03-18T23:35:12.557Z"
+stopped_at: "Checkpoint: 01-02 Task 2 human-verify — awaiting user verification of complete Phase 1 app on Simulator/device"
+last_updated: "2026-03-18T23:39:19.326Z"
 last_activity: 2026-03-18 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 3
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 3
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-foundation P01 | 5min | 2 tasks | 19 files |
 | Phase 01-foundation P00 | 20 | 1 tasks | 8 files |
+| Phase 01-foundation P02 | 2min | 1 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -68,6 +69,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: WKWebView attached to UIWindowScene window via connectedScenes API (not deprecated UIApplication.shared.windows)
 - [Phase 01-foundation]: UserDefaults manual read/write for email persistence instead of @AppStorage for cleaner ObservableObject integration
 - [Phase 01-foundation]: TEST_HOST set to PandaAutomator app so XCTests can @testable import PandaAutomator and access @MainActor classes
+- [Phase 01-foundation]: GeometryReader used to constrain Form to 50% height when log area is visible — avoids SwiftUI flexible height layout issues
+- [Phase 01-foundation]: onChange guard (formatted != newValue) prevents infinite loop in dash-formatting handler — formatCodeWithDashes is idempotent but unconditional call triggers re-render cycle
 
 ### Pending Todos
 
@@ -82,6 +85,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T23:35:12.555Z
-Stopped at: Completed 01-foundation-00-PLAN.md
+Last session: 2026-03-18T23:39:19.323Z
+Stopped at: Checkpoint: 01-02 Task 2 human-verify — awaiting user verification of complete Phase 1 app on Simulator/device
 Resume file: None
