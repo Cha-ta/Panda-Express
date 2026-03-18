@@ -6,14 +6,24 @@ final class EngineSetupTests: XCTestCase {
 
     @MainActor
     func testSetupCreatesWebView() {
-        // AutomationEngine exposes its webView via internal access for testing.
         let engine = AutomationEngine()
         engine.setup()
-        // Verify via indirect evidence: the engine can load a page without crashing.
-        // Direct webView access requires @testable and internal visibility.
-        XCTAssertNotNil(engine, "Engine should be non-nil after setup")
-        // Trigger a load to confirm webView is configured
+        // After setup(), the WKWebView is non-nil.
+        // We verify via the testable userAgent accessor: it is non-empty only if
+        // the webView was successfully initialized with a customUserAgent.
+        XCTAssertFalse(
+            engine.userAgent.isEmpty,
+            "userAgent should be non-empty after setup(), confirming WKWebView was created"
+        )
+    }
+
+    @MainActor
+    func testSetupAllowsPageLoad() {
+        let engine = AutomationEngine()
+        engine.setup()
+        // loadFeedbackPage should not crash after setup — webView is initialized.
         engine.loadFeedbackPage()
-        // If loadFeedbackPage doesn't crash, WKWebView was created successfully.
+        // Reaching this line without crash confirms WKWebView exists.
+        XCTAssertTrue(true)
     }
 }
