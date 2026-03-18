@@ -75,32 +75,32 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FORM-01 | — | Pending |
-| FORM-02 | — | Pending |
-| FORM-03 | — | Pending |
-| FORM-04 | — | Pending |
-| AUTO-01 | — | Pending |
-| AUTO-02 | — | Pending |
-| AUTO-03 | — | Pending |
-| AUTO-04 | — | Pending |
-| AUTO-05 | — | Pending |
-| AUTO-06 | — | Pending |
-| AUTO-07 | — | Pending |
-| AUTO-08 | — | Pending |
-| AUTO-09 | — | Pending |
-| AUTO-10 | — | Pending |
-| AUTO-11 | — | Pending |
-| LOG-01 | — | Pending |
-| LOG-02 | — | Pending |
-| LOG-03 | — | Pending |
-| DESIGN-01 | — | Pending |
-| DEPLOY-01 | — | Pending |
+| FORM-01 | Phase 1 | Pending |
+| FORM-02 | Phase 1 | Pending |
+| FORM-03 | Phase 1 | Pending |
+| FORM-04 | Phase 1 | Pending |
+| AUTO-01 | Phase 1 | Pending |
+| AUTO-02 | Phase 1 | Pending |
+| AUTO-03 | Phase 2 | Pending |
+| AUTO-04 | Phase 2 | Pending |
+| AUTO-05 | Phase 2 | Pending |
+| AUTO-06 | Phase 2 | Pending |
+| AUTO-07 | Phase 2 | Pending |
+| AUTO-08 | Phase 2 | Pending |
+| AUTO-09 | Phase 2 | Pending |
+| AUTO-10 | Phase 2 | Pending |
+| AUTO-11 | Phase 2 | Pending |
+| LOG-01 | Phase 3 | Pending |
+| LOG-02 | Phase 3 | Pending |
+| LOG-03 | Phase 3 | Pending |
+| DESIGN-01 | Phase 1 | Pending |
+| DEPLOY-01 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 20 total
-- Mapped to phases: 0
-- Unmapped: 20 ⚠️
+- Mapped to phases: 20
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-18*
-*Last updated: 2026-03-18 after initial definition*
+*Last updated: 2026-03-18 after roadmap creation*
