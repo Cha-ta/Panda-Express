@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 1 context gathered
-last_updated: "2026-03-18T22:55:58.302Z"
+stopped_at: Completed 01-01-PLAN.md
+last_updated: "2026-03-18T23:32:45.843Z"
 last_activity: 2026-03-18 — Roadmap created, phases derived from requirements
 progress:
   total_phases: 3
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 3
+  completed_plans: 1
   percent: 0
 ---
 
@@ -50,6 +50,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01-foundation P01 | 5min | 2 tasks | 19 files |
 
 ## Accumulated Context
 
@@ -62,6 +63,9 @@ Recent decisions affecting current work:
 - [Setup]: SwiftUI chosen over UIKit (simpler, modern)
 - [Setup]: Sideload via Xcode, no App Store
 - [Setup]: Hidden WKWebView (not visible) — user observes via log view only
+- [Phase 01-foundation]: ObservableObject + @Published used instead of @Observable — iOS 16.0 target; @Observable requires iOS 17+
+- [Phase 01-foundation]: WKWebView attached to UIWindowScene window via connectedScenes API (not deprecated UIApplication.shared.windows)
+- [Phase 01-foundation]: UserDefaults manual read/write for email persistence instead of @AppStorage for cleaner ObservableObject integration
 
 ### Pending Todos
 
@@ -76,6 +80,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T22:55:58.299Z
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-foundation/01-CONTEXT.md
+Last session: 2026-03-18T23:32:45.840Z
+Stopped at: Completed 01-01-PLAN.md
+Resume file: None

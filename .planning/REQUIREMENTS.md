@@ -9,15 +9,15 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Form UI
 
-- [ ] **FORM-01**: User can enter 24-character survey code via segmented input (6 groups of 4)
-- [ ] **FORM-02**: User can enter email address, pre-filled from last use (@AppStorage)
-- [ ] **FORM-03**: App validates code length (24 chars) and email format before running
-- [ ] **FORM-04**: Inputs and Run button are disabled while automation is active
+- [x] **FORM-01**: User can enter 24-character survey code via segmented input (6 groups of 4)
+- [x] **FORM-02**: User can enter email address, pre-filled from last use (@AppStorage)
+- [x] **FORM-03**: App validates code length (24 chars) and email format before running
+- [x] **FORM-04**: Inputs and Run button are disabled while automation is active
 
 ### Automation Engine
 
-- [ ] **AUTO-01**: App creates a hidden WKWebView attached to the window hierarchy
-- [ ] **AUTO-02**: App injects anti-detection (navigator.webdriver override at documentStart, clean Mobile Safari user agent)
+- [x] **AUTO-01**: App creates a hidden WKWebView attached to the window hierarchy
+- [x] **AUTO-02**: App injects anti-detection (navigator.webdriver override at documentStart, clean Mobile Safari user agent)
 - [ ] **AUTO-03**: App navigates to pandaexpress.com/feedback and enters survey code chunks
 - [ ] **AUTO-04**: App selects first radio option ("Highly Satisfied") for all rating questions
 - [ ] **AUTO-05**: App selects "No" for single Yes/No radio questions to minimize form
@@ -40,7 +40,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Deployment
 
-- [ ] **DEPLOY-01**: App is buildable and installable via Xcode sideloading to iPhone
+- [x] **DEPLOY-01**: App is buildable and installable via Xcode sideloading to iPhone
 
 ## v2 Requirements
 
@@ -75,12 +75,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FORM-01 | Phase 1 | Pending |
-| FORM-02 | Phase 1 | Pending |
-| FORM-03 | Phase 1 | Pending |
-| FORM-04 | Phase 1 | Pending |
-| AUTO-01 | Phase 1 | Pending |
-| AUTO-02 | Phase 1 | Pending |
+| FORM-01 | Phase 1 | Complete |
+| FORM-02 | Phase 1 | Complete |
+| FORM-03 | Phase 1 | Complete |
+| FORM-04 | Phase 1 | Complete |
+| AUTO-01 | Phase 1 | Complete |
+| AUTO-02 | Phase 1 | Complete |
 | AUTO-03 | Phase 2 | Pending |
 | AUTO-04 | Phase 2 | Pending |
 | AUTO-05 | Phase 2 | Pending |
@@ -94,7 +94,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LOG-02 | Phase 3 | Pending |
 | LOG-03 | Phase 3 | Pending |
 | DESIGN-01 | Phase 1 | Pending |
-| DEPLOY-01 | Phase 1 | Pending |
+| DEPLOY-01 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 20 total
