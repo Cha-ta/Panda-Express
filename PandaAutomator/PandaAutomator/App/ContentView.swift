@@ -46,7 +46,7 @@ struct ContentView: View {
                                     .padding(.vertical, 8)
                                 }
                                 .background(Color(.systemBackground))
-                                .onChange(of: viewModel.logMessages.count) { _, count in
+                                .onChange(of: viewModel.logMessages.count) { count in
                                     if count > 0 {
                                         withAnimation {
                                             proxy.scrollTo(count - 1, anchor: .bottom)

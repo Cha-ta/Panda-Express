@@ -10,7 +10,7 @@ struct InputFormView: View {
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.characters)
                 .disabled(viewModel.isRunning)
-                .onChange(of: viewModel.surveyCode) { _, newValue in
+                .onChange(of: viewModel.surveyCode) { newValue in
                     let formatted = viewModel.formatCodeWithDashes(newValue)
                     if formatted != newValue {
                         viewModel.surveyCode = formatted
