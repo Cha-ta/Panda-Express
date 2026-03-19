@@ -51,6 +51,10 @@ python script.py --email "your@email.com" --code "240640854263012301131206"
 python3 app.py
 ```
 
+```PowerShell
+python app.py
+```
+
 Then open http://localhost:5000 in your browser.
 
 ## How It Works
@@ -67,19 +71,6 @@ Then open http://localhost:5000 in your browser.
 ├── script.py        # Playwright automation script
 ├── index.html       # Web interface
 ├── requirements.txt # Python dependencies
-└── render.yaml      # Render deployment config
-```
-
-## Deployment (Render)
-
-The project is configured for deployment on Render:
-
-```bash
-# Build command
-pip install -r requirements.txt && python -m playwright install chromium && python -m playwright install-deps chromium
-
-# Start command
-gunicorn app:app
 ```
 
 ## Anti-Detection Features
