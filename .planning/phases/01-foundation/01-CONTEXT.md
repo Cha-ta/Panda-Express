@@ -1,6 +1,6 @@
 # Phase 1: Foundation - Context
 
-**Gathered:** 2026-03-18
+**Gathered:** 2026-03-20 (updated from 2026-03-18)
 **Status:** Ready for planning
 
 <domain>
@@ -13,56 +13,74 @@ Xcode project with SwiftUI form UI, hidden WKWebView that loads pandaexpress.com
 <decisions>
 ## Implementation Decisions
 
-### Visual Style — Light Mode
-- Light mode with green accents (NOT dark like the web UI)
-- Use iOS system green (`Color.green`) as the accent color
-- All SF Pro font — no custom fonts, fully native iOS feel
-- Panda image (pandaEating.png) as a subtle faded background/watermark behind the form, very light opacity
-- Panda image also used as the app icon on the home screen
+### Orientation
+- **Portrait only** — lock the app to portrait orientation in Xcode project settings (no landscape support)
+- Portrait is the primary and only design target
 
-### Form Styling
-- iOS-style grouped form sections (like Settings app) — most native approach
-- Filled green Run button with white text — solid primary action
-- "Show logs" toggle lives inside the form area (not in nav bar), near the other form elements
+### Background / Wallpaper
+- `pandaEating.png` fills the entire screen edge-to-edge as a wallpaper (`scaledToFill`, `ignoresSafeArea`)
+- Opacity: ~0.18 — present but not distracting
+- `scrollContentBackground(.hidden)` removes the Form's opaque scroll background so panda is visible through the gaps between sections
 
-### App Title & Nav
-- Navigation bar title: "Panda" (shortened from "Panda Survey")
-- Subtitle can appear in the form section area
+### Form Cell Style
+- Section cells (white boxes containing text fields) are **fully opaque** — solid white
+- Panda wallpaper shows through the **gray gaps between sections** only (default iOS grouped form gap color)
+- Section header labels stay **default iOS gray** — no green tint on headers
 
-### Code Input
+### Input Borders
+- Each TextField has a visible **green rounded border** (`Color.green.opacity(0.6)`, cornerRadius 6, lineWidth 1.5)
+- Border is **static** — does not change on focus/tap
+- Border **grays out** when the field is disabled (automation is running)
+- Border turns **red** when the field has partial but invalid content (e.g., survey code partially typed but not yet valid)
+
+### Form Layout (Portrait-First)
+- The Form is a **scrollable view** — user can scroll to reach the Run button and Show Logs toggle if keyboard or log box pushes content down
+- No forced height constraints on the Form — it fills available space and scrolls naturally
+- All three sections (Survey Code, Email, Run+Toggle) must be reachable in portrait without going to landscape
+
+### Survey Code Input
 - Single text field for the full 24-character code (NOT 6 separate fields)
-- Auto-inserts dashes every 4 characters as user types (display: `1234-5678-9012-3456-7890-1234`)
+- Auto-inserts dashes every 4 characters as user types: `1234-5678-9012-3456-7890-1234`
 - Full default keyboard (codes may contain letters)
 - Strips dashes internally before passing to automation
 
 ### Email Input
 - Single email text field with email keyboard
-- Persisted via @AppStorage — pre-filled on next launch
+- Persisted via UserDefaults — pre-filled on next launch
 
-### Layout & Log Area
-- Single-screen app, no navigation stack
-- Form at top: code input, email input, Run button, Show logs toggle
-- "Show logs" checkbox toggle — when checked, a scrollable log box appears below the form
-- Log box takes bottom half of screen when visible
-- Log box scrolls independently — scrolling logs does not scroll the main view
-- When logs hidden, form is the only visible content
+### Log Box
+- **Light style** — matches the form (light/secondary system background, dark text)
+- Fixed height: **160pt** (~8 lines visible at once)
+- Rounded border (thin separator stroke, cornerRadius 8)
+- Monospace caption font
+- **Color-coded log lines:** errors → red, success/completion → green, normal steps → default text color
+- Auto-scrolls to latest entry
+- Appears below the form when "Show Logs" toggle is on; collapses completely when off
+
+### Run Button & Show Logs Toggle
+- Run button: filled green with white text (`.borderedProminent`, `.tint(.green)`)
+- Run button disabled when inputs are invalid or automation is running
+- "Show Logs" toggle lives inside the form section alongside the Run button
+- During automation: Run button replaced by a spinner + "Running..." text
+
+### App Title & Nav
+- Navigation bar title: "Panda"
+- `.tint(.green)` throughout
 
 ### Claude's Discretion
-- Exact panda watermark opacity and positioning
-- Grouped form section labels and dividers
-- Status indicator design (spinner, checkmark on completion)
-- Exact spacing and padding values
-- How the "Show logs" toggle looks (checkbox, switch, or SF Symbol)
+- Exact padding/spacing values
+- Precise red/gray border opacity values for disabled/invalid states
+- Status indicator design details (spinner style)
 
 </decisions>
 
 <specifics>
 ## Specific Ideas
 
-- Title is just "Panda" in the nav bar — short and clean
-- Code input auto-formats with dashes like a credit card field: `1234-5678-9012-3456-7890-1234`
-- The log box is a contained scrollable area that doesn't affect the rest of the view — similar to a terminal output box
-- Light/green palette is a deliberate departure from the dark web UI — should feel fresh and iOS-native
+- Code input auto-formats like a credit card field: `1234-5678-9012-3456-7890-1234`
+- Log box should feel like a contained output area — compact, scrollable, never takes over the screen
+- The wallpaper shows through the gray gaps between form sections — panda is present but doesn't compete with text readability
+- Portrait is the ONLY orientation — lock it in project settings so the app never rotates
 
 </specifics>
 
@@ -70,16 +88,24 @@ Xcode project with SwiftUI form UI, hidden WKWebView that loads pandaexpress.com
 ## Existing Code Insights
 
 ### Reusable Assets
-- `pandaEating.png` (2.1MB): Use for both app icon and subtle background watermark
-- `index.html` CSS variables: Reference for green accent values, though switching from dark to light mode
+- `pandaEating.png`: Used for app icon and full-screen wallpaper background
+- `AutomationViewModel`: `@Published isRunning`, `isValid`, `showLogs`, `logMessages`, `surveyCode`, `email` — all UI state centralized here
 
 ### Established Patterns
-- Web UI: 6 separate code input fields with auto-advance — iOS version consolidates to single field with dash formatting
-- Web UI: DM Mono + Syne fonts — iOS version uses all SF Pro (native)
+- `ObservableObject` + `@Published` for all state (iOS 16 target — no `@Observable`)
+- `onChange` with single-param closure (iOS 16 compatible — NOT two-param form)
+- `UserDefaults` for email persistence (not `@AppStorage`)
+- `scrollContentBackground(.hidden)` on Form for transparent scroll background
 
 ### Integration Points
-- WKWebView will be hidden (zero-frame or off-screen) — no visible browser UI
-- Log area (Phase 3) will plug into the log box area defined in this phase's layout
+- Log box plugs into `viewModel.logMessages` — array already exists
+- WKWebView is hidden (zero-frame) and does not appear in SwiftUI view hierarchy
+- `viewModel.isRunning` gates both UI disabled states and border color logic
+
+### Known Issues to Fix
+- Form is cut off at bottom in portrait mode — needs `.frame(maxHeight: .infinity)` on the Form or its container to fill available space within NavigationStack
+- Orientation lock must be set in Xcode project settings (target deployment info), not in SwiftUI code
+- Input border color states (red for invalid, gray for disabled) not yet implemented — static green only
 
 </code_context>
 
@@ -93,4 +119,4 @@ None — discussion stayed within phase scope
 ---
 
 *Phase: 01-foundation*
-*Context gathered: 2026-03-18*
+*Context updated: 2026-03-20*
