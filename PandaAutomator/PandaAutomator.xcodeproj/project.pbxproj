@@ -26,6 +26,7 @@
 		AA110001AAAA000100000001 /* AutomationFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110001AAAA000100000002 /* AutomationFlowTests.swift */; };
 		AA110001AAAA000200000001 /* JSSnippetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110001AAAA000200000002 /* JSSnippetTests.swift */; };
 		AA110001AAAA000300000001 /* NavigationWaitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110001AAAA000300000002 /* NavigationWaitTests.swift */; };
+		CC020001CCCC000100000001 /* AutomationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC020001CCCC000100000002 /* AutomationResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		AA110001AAAA000100000002 /* AutomationFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationFlowTests.swift; sourceTree = "<group>"; };
 		AA110001AAAA000200000002 /* JSSnippetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSSnippetTests.swift; sourceTree = "<group>"; };
 		AA110001AAAA000300000002 /* NavigationWaitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationWaitTests.swift; sourceTree = "<group>"; };
+		CC020001CCCC000100000002 /* AutomationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				0C467E9544C04D2290652514 /* AutomationStatus.swift */,
+				CC020001CCCC000100000002 /* AutomationResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				BB010001BBBB000100000001 /* JSSnippets.swift in Sources */,
 				BB010002BBBB000200000001 /* PageHandler.swift in Sources */,
 				1D9E8F58449D4F55BE4D1C93 /* AutomationStatus.swift in Sources */,
+				CC020001CCCC000100000001 /* AutomationResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
