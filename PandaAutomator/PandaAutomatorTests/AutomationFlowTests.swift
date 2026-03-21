@@ -125,13 +125,44 @@ final class AutomationFlowTests: XCTestCase {
 
     func testCodeChunking() {
         // AUTO-03: 24-char code splits into 6 chunks of 4
-        let code = "ABCD1234EFGH5678IJKL9012"
-        let chunks = stride(from: 0, to: code.count, by: 4).map { offset -> String in
-            let start = code.index(code.startIndex, offsetBy: offset)
-            let end = code.index(start, offsetBy: 4, limitedBy: code.endIndex) ?? code.endIndex
-            return String(code[start..<end])
-        }
+        let chunks = chunkCode("ABCD1234EFGH5678IJKL9012")
         XCTAssertEqual(chunks.count, 6, "24-char code should produce 6 chunks")
         XCTAssertEqual(chunks, ["ABCD", "1234", "EFGH", "5678", "IJKL", "9012"], "Chunks should be 4 chars each in order")
+    }
+
+    func testCodeEntryNotOnLaterPages() {
+        // Even with 6 text inputs, page > 0 should not be codeEntry
+        let elements = PageElements(
+            radioCount: 0,
+            radioNames: [],
+            checkboxCount: 0,
+            checkboxes: [],
+            textInputCount: 6,
+            textInputs: ["a", "b", "c", "d", "e", "f"],
+            textareaCount: 0,
+            textareas: []
+        )
+        let result = classifyPage(elements: elements, pageNum: 5)
+        XCTAssertNotEqual(result, .codeEntry, "6 text inputs on page > 0 should NOT be codeEntry")
+    }
+
+    func testPriorityRadioOverCheckbox() {
+        // Radio takes priority over checkbox per script.py
+        let elements = PageElements(
+            radioCount: 2,
+            radioNames: ["Q1", "Q2"],
+            checkboxCount: 3,
+            checkboxes: [
+                CheckboxInfo(name: "cb1", value: "1", id: "cb1"),
+                CheckboxInfo(name: "cb2", value: "2", id: "cb2"),
+                CheckboxInfo(name: "cb3", value: "3", id: "cb3"),
+            ],
+            textInputCount: 0,
+            textInputs: [],
+            textareaCount: 0,
+            textareas: []
+        )
+        let result = classifyPage(elements: elements, pageNum: 2)
+        XCTAssertEqual(result, .radioSatisfaction, "Radio should take priority over checkbox")
     }
 }
