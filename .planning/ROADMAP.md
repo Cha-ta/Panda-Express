@@ -43,8 +43,12 @@ Plans:
   2. Every radio question receives the first option ("Highly Satisfied") selected; every Yes/No question receives "No"
   3. Checkbox pages have the first 2 options checked; textarea fields are filled with positive feedback text; email fields receive the user's email
   4. The app detects the thank-you page and stops automatically, without continuing to navigate beyond completion
-  5. Random 0.5–1.5s delays are applied between actions so the form is not driven at machine speed
-**Plans**: TBD
+  5. Random 0.5-1.5s delays are applied between actions so the form is not driven at machine speed
+**Plans**: 3 plans
+Plans:
+- [ ] 02-00-PLAN.md — Wave 0 test scaffolds (AutomationFlowTests, JSSnippetTests, NavigationWaitTests)
+- [ ] 02-01-PLAN.md — JSSnippets.swift and PageHandler.swift (JS constants + page classification types)
+- [ ] 02-02-PLAN.md — AutomationEngine async run() loop, ViewModel wiring, and human verification
 
 ### Phase 3: Feedback & Logging
 **Goal**: The user can observe every action the automation takes in real time and knows clearly whether the survey completed successfully or failed with a specific reason
@@ -64,5 +68,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-21 |
-| 2. Automation Engine | 0/TBD | Not started | - |
+| 2. Automation Engine | 0/3 | Planning complete | - |
 | 3. Feedback & Logging | 0/TBD | Not started | - |
