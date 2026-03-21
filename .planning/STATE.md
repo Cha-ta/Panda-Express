@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-00-PLAN.md -- Wave 0 test scaffolds for automation engine
-last_updated: "2026-03-21T02:31:37.075Z"
-last_activity: 2026-03-20 — Wave 0 test scaffolds created for AUTO-03 through AUTO-11
+stopped_at: Completed 02-01-PLAN.md -- JS snippets and page types
+last_updated: "2026-03-21T02:36:02Z"
+last_activity: 2026-03-20 — JSSnippets.swift and PageHandler.swift created with full test coverage
 progress:
   total_phases: 3
   completed_phases: 1
   total_plans: 7
-  completed_plans: 5
-  percent: 71
+  completed_plans: 6
+  percent: 85
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Reliably automate the entire Panda Express feedback form from start to finish on the user's iPhone, using their own network connection.
-**Current focus:** Phase 2 — Automation Engine (test scaffolds complete, implementing production code)
+**Current focus:** Phase 2 — Automation Engine (JS snippets + page types done, engine run loop next)
 
 ## Current Position
 
 Phase: 2 of 3 (Automation Engine)
-Plan: 1 of 3 (Plan 00 complete, Plan 01 next)
+Plan: 2 of 3 (Plans 00-01 complete, Plan 02 next)
 Status: Executing
-Last activity: 2026-03-20 — Wave 0 test scaffolds created for AUTO-03 through AUTO-11
+Last activity: 2026-03-20 — JSSnippets.swift and PageHandler.swift created with full test coverage
 
-Progress: [███████░░░] 71%
+Progress: [████████░░] 85%
 
 ## Performance Metrics
 
@@ -55,6 +55,7 @@ Progress: [███████░░░] 71%
 | Phase 01-foundation P02 | 2min | 1 tasks | 7 files |
 | Phase 01-foundation P03 | 6min | 3 tasks | 3 files |
 | Phase 02-automation-engine P00 | 2min | 1 tasks | 4 files |
+| Phase 02-automation-engine P01 | 7min | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,9 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: Portrait lock via INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone in build settings (not Info.plist) because GENERATE_INFOPLIST_FILE = YES
 - [Phase 01-foundation]: Border color as computed property reacting to isRunning, isEmpty, and validation — no separate @State needed
 - [Phase 02-automation-engine]: Wave 0 test scaffolds reference forward-declared types from Plan 01 (PageElements, JSSnippets, classifyPage) -- tests won't compile until production code exists
+- [Phase 02-automation-engine]: All JS snippets use IIFE pattern returning values to avoid Pitfall 1 (evaluateJavaScript nil crash)
+- [Phase 02-automation-engine]: Replaced Playwright :has-text with JS innerText check for button fallback in clickNext
+- [Phase 02-automation-engine]: Added maxPages and randomDelay stubs to AutomationEngine to unblock NavigationWaitTests compilation
 
 ### Pending Todos
 
@@ -91,6 +95,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-21T02:31:37.073Z
-Stopped at: Completed 02-00-PLAN.md -- Wave 0 test scaffolds for automation engine
+Last session: 2026-03-21T02:36:02Z
+Stopped at: Completed 02-01-PLAN.md -- JS snippets and page types
 Resume file: None
