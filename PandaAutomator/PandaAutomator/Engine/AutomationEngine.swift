@@ -53,6 +53,18 @@ class AutomationEngine: NSObject {
         loadFeedbackPage()
     }
 
+    // MARK: - Constants
+
+    /// Maximum pages before stopping automation loop (safety cap).
+    static let maxPages = 15
+
+    /// Random delay between actions to appear human-like (0.5-1.5s).
+    /// Matches script.py human_delay().
+    static func randomDelay() async {
+        let nanoseconds = UInt64.random(in: 500_000_000...1_500_000_000)
+        try? await Task.sleep(nanoseconds: nanoseconds)
+    }
+
     // MARK: - Testable Accessors
 
     /// Exposed for unit tests (AntiDetectionTests).
