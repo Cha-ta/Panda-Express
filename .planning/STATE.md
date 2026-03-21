@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 Phase: 3 of 3 — Skipped (Feedback & Logging)
 Milestone: v1.0 COMPLETE
 Status: Complete
-Last activity: 2026-03-21 — Phase 3 skipped by user, milestone complete
+Last activity: 2026-03-21 - Completed quick task 1: Create iPhone sideloading INSTALL.md
 
 Progress: [██████████] 100%
 
@@ -95,6 +95,12 @@ None yet.
 - [Phase 2]: Exact page count is ~15 (estimate) — confirm empirically during Phase 2
 - [Phase 2]: WKWebView must be attached to UIWindow hierarchy or JS execution silently throttles — verify on real device before Phase 2 work begins
 - [Phase 2]: Bot detection aggressiveness unknown — user agent + webdriver override carried from Python solution; additional fingerprinting possible
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 1 | Create iPhone sideloading INSTALL.md | 2026-03-21 | b5d9905 | [1-create-iphone-sideloading-readme-with-st](./quick/1-create-iphone-sideloading-readme-with-st/) |
 
 ## Session Continuity
 
