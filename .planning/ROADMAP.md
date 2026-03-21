@@ -13,7 +13,7 @@ Three phases that build bottom-up: a validated Xcode project with the SwiftUI fo
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Xcode project, SwiftUI form UI, hidden WKWebView scaffolding, and app branding (completed 2026-03-18)
-- [ ] **Phase 2: Automation Engine** - Full JavaScript automation port driving the Panda Express survey form end-to-end
+- [x] **Phase 2: Automation Engine** - Full JavaScript automation port driving the Panda Express survey form end-to-end (completed 2026-03-21)
 - [ ] **Phase 3: Feedback & Logging** - Real-time log view, error surfacing, and completion state reporting
 
 ## Phase Details
@@ -68,5 +68,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-21 |
-| 2. Automation Engine | 0/3 | Planning complete | - |
+| 2. Automation Engine | 3/3 | Complete   | 2026-03-21 |
 | 3. Feedback & Logging | 0/TBD | Not started | - |
