@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Xcode project, SwiftUI form UI, hidden WKWebView scaffolding, and app branding (completed 2026-03-18)
 - [x] **Phase 2: Automation Engine** - Full JavaScript automation port driving the Panda Express survey form end-to-end (completed 2026-03-21)
-- [ ] **Phase 3: Feedback & Logging** - Real-time log view, error surfacing, and completion state reporting
+- [x] ~~**Phase 3: Feedback & Logging**~~ - Skipped by user (2026-03-21)
 
 ## Phase Details
 
@@ -50,15 +50,8 @@ Plans:
 - [ ] 02-01-PLAN.md — JSSnippets.swift and PageHandler.swift (JS constants + page classification types)
 - [ ] 02-02-PLAN.md — AutomationEngine async run() loop, ViewModel wiring, and human verification
 
-### Phase 3: Feedback & Logging
-**Goal**: The user can observe every action the automation takes in real time and knows clearly whether the survey completed successfully or failed with a specific reason
-**Depends on**: Phase 2
-**Requirements**: LOG-01, LOG-02, LOG-03
-**Success Criteria** (what must be TRUE):
-  1. A scrolling log view updates in real time during automation, showing each action (page number, element found, action taken) as it happens
-  2. Network failures, JavaScript errors, and element-not-found conditions appear as clearly labeled error lines in the log — not as silent hangs
-  3. When automation finishes, the user sees an unambiguous success message (survey complete) or failure message (what went wrong) without reading through all log lines
-**Plans**: TBD
+### Phase 3: Feedback & Logging — SKIPPED
+Skipped by user on 2026-03-21. App works well without additional logging/feedback UI.
 
 ## Progress
 
@@ -69,4 +62,4 @@ Phases execute in numeric order: 1 → 2 → 3
 |-------|----------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete   | 2026-03-21 |
 | 2. Automation Engine | 3/3 | Complete   | 2026-03-21 |
-| 3. Feedback & Logging | 0/TBD | Not started | - |
+| 3. Feedback & Logging | — | Skipped | 2026-03-21 |
