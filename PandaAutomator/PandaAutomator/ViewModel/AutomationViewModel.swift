@@ -53,7 +53,22 @@ class AutomationViewModel: ObservableObject {
         guard isValid else { return }
         isRunning = true
         status = .running
-        engine.run(code: cleanCode, email: email)
+        logMessages = []
+        showLogs = true
+
+        Task {
+            let result = await engine.run(code: cleanCode, email: email)
+
+            switch result {
+            case .success:
+                status = .success
+            case .error(let message):
+                status = .error(message)
+            case .maxPagesReached:
+                status = .error("Reached maximum page limit without completing survey")
+            }
+            isRunning = false
+        }
     }
 
     func appendLog(_ message: String) {
