@@ -7,50 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		285A1FCEA91B4740A96804AD /* PandaAutomatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D7062B5EDD4C65B4D8E896 /* PandaAutomatorApp.swift */; };
-		135F01DB58384CC99F4D1EF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA98BA70E724EDD8077D23E /* ContentView.swift */; };
 		04BFA9D081C6483787D48201 /* InputFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850A27442B6A4A599620B2D3 /* InputFormView.swift */; };
-		4A06B56E9B884D2F99DCEBD5 /* AutomationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C93F523F30E46E79CCE4AD5 /* AutomationViewModel.swift */; };
-		33E5C3578BE14CADB28EB2DD /* AutomationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC42A4A2AE00428C8486B67D /* AutomationEngine.swift */; };
-		8608B6FC64C54864B34AC515 /* JSBridgeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560528C6739412DB272997A /* JSBridgeHandler.swift */; };
-		1D9E8F58449D4F55BE4D1C93 /* AutomationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C467E9544C04D2290652514 /* AutomationStatus.swift */; };
 		0FFD75D91CCB4D7D8925EE33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF26AC53C2544B7DA1BF386F /* Assets.xcassets */; };
-		F0246618FEE546788692696F /* CodeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2A74F04134B28A872AADD /* CodeFormatterTests.swift */; };
-		C698A2F589204568A2DF6040 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184C5D62D4A4C2C8FA8792B /* ValidationTests.swift */; };
-		71EAA1EBE5B24BA6A3D2B720 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE396D40097A40A8A4E4F077 /* ViewModelTests.swift */; };
-		ABE1D816E41C4A0580E2607E /* EmailPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890907019D646078828D989 /* EmailPersistenceTests.swift */; };
-		3A2897820F6F41E08DBBF9D7 /* EngineSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB32CE69C44A8D999ACB66 /* EngineSetupTests.swift */; };
+		135F01DB58384CC99F4D1EF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA98BA70E724EDD8077D23E /* ContentView.swift */; };
 		1B8E1F0ADFB646259D20B633 /* AntiDetectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4CFC924B44CF79D47663B /* AntiDetectionTests.swift */; };
+		1D9E8F58449D4F55BE4D1C93 /* AutomationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C467E9544C04D2290652514 /* AutomationStatus.swift */; };
+		285A1FCEA91B4740A96804AD /* PandaAutomatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D7062B5EDD4C65B4D8E896 /* PandaAutomatorApp.swift */; };
+		33E5C3578BE14CADB28EB2DD /* AutomationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC42A4A2AE00428C8486B67D /* AutomationEngine.swift */; };
+		3A2897820F6F41E08DBBF9D7 /* EngineSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAB32CE69C44A8D999ACB66 /* EngineSetupTests.swift */; };
+		4A06B56E9B884D2F99DCEBD5 /* AutomationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C93F523F30E46E79CCE4AD5 /* AutomationViewModel.swift */; };
+		71EAA1EBE5B24BA6A3D2B720 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE396D40097A40A8A4E4F077 /* ViewModelTests.swift */; };
+		8608B6FC64C54864B34AC515 /* JSBridgeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560528C6739412DB272997A /* JSBridgeHandler.swift */; };
+		ABE1D816E41C4A0580E2607E /* EmailPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890907019D646078828D989 /* EmailPersistenceTests.swift */; };
+		C698A2F589204568A2DF6040 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0184C5D62D4A4C2C8FA8792B /* ValidationTests.swift */; };
+		F0246618FEE546788692696F /* CodeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2A74F04134B28A872AADD /* CodeFormatterTests.swift */; };
+		AA110001AAAA000100000001 /* AutomationFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110001AAAA000100000002 /* AutomationFlowTests.swift */; };
+		AA110001AAAA000200000001 /* JSSnippetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110001AAAA000200000002 /* JSSnippetTests.swift */; };
+		AA110001AAAA000300000001 /* NavigationWaitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110001AAAA000300000002 /* NavigationWaitTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FB0EE6AFE802496E9BC0264F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21565CCBF2EA45FEB5E0F463 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFE75C70D2084724BBA30285;
+			remoteInfo = PandaAutomator;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		B2D7062B5EDD4C65B4D8E896 /* PandaAutomatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaAutomatorApp.swift; sourceTree = "<group>"; };
-		CDA98BA70E724EDD8077D23E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		850A27442B6A4A599620B2D3 /* InputFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormView.swift; sourceTree = "<group>"; };
+		0184C5D62D4A4C2C8FA8792B /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
+		0C467E9544C04D2290652514 /* AutomationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationStatus.swift; sourceTree = "<group>"; };
 		3C93F523F30E46E79CCE4AD5 /* AutomationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationViewModel.swift; sourceTree = "<group>"; };
+		6890907019D646078828D989 /* EmailPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPersistenceTests.swift; sourceTree = "<group>"; };
+		850A27442B6A4A599620B2D3 /* InputFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormView.swift; sourceTree = "<group>"; };
+		A9F2A74F04134B28A872AADD /* CodeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFormatterTests.swift; sourceTree = "<group>"; };
+		AEAB32CE69C44A8D999ACB66 /* EngineSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSetupTests.swift; sourceTree = "<group>"; };
+		B2D7062B5EDD4C65B4D8E896 /* PandaAutomatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaAutomatorApp.swift; sourceTree = "<group>"; };
+		B9F4CFC924B44CF79D47663B /* AntiDetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiDetectionTests.swift; sourceTree = "<group>"; };
+		BE396D40097A40A8A4E4F077 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		CDA98BA70E724EDD8077D23E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF26AC53C2544B7DA1BF386F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC42A4A2AE00428C8486B67D /* AutomationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationEngine.swift; sourceTree = "<group>"; };
 		E560528C6739412DB272997A /* JSBridgeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSBridgeHandler.swift; sourceTree = "<group>"; };
-		0C467E9544C04D2290652514 /* AutomationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationStatus.swift; sourceTree = "<group>"; };
-		CF26AC53C2544B7DA1BF386F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE054E484DB74EB7877F8B10 /* PandaAutomator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PandaAutomator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFEB29A64544CF98A4D4ED5 /* PandaAutomatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PandaAutomatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9F2A74F04134B28A872AADD /* CodeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFormatterTests.swift; sourceTree = "<group>"; };
-		0184C5D62D4A4C2C8FA8792B /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
-		BE396D40097A40A8A4E4F077 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
-		6890907019D646078828D989 /* EmailPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPersistenceTests.swift; sourceTree = "<group>"; };
-		AEAB32CE69C44A8D999ACB66 /* EngineSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSetupTests.swift; sourceTree = "<group>"; };
-		B9F4CFC924B44CF79D47663B /* AntiDetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiDetectionTests.swift; sourceTree = "<group>"; };
+		AA110001AAAA000100000002 /* AutomationFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationFlowTests.swift; sourceTree = "<group>"; };
+		AA110001AAAA000200000002 /* JSSnippetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSSnippetTests.swift; sourceTree = "<group>"; };
+		AA110001AAAA000300000002 /* NavigationWaitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationWaitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4778976AA8D14B44A1BBA996 /* Frameworks (App) */ = {
+		2572AC405E044AC4ADA170DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2572AC405E044AC4ADA170DE /* Frameworks (Tests) */ = {
+		4778976AA8D14B44A1BBA996 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,13 +76,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ED8935A47D514C0BB606BAE6 /* root */ = {
+		0AFF0884F6194398A117A5EE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8F55F0E57C144B3FAE8EEA0F /* PandaAutomator */,
-				2ACCF8E9612343EB821BBA43 /* PandaAutomatorTests */,
-				7175E0C73C644568A648B225 /* Products */,
+				3C93F523F30E46E79CCE4AD5 /* AutomationViewModel.swift */,
 			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2ACCF8E9612343EB821BBA43 /* PandaAutomatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2A74F04134B28A872AADD /* CodeFormatterTests.swift */,
+				0184C5D62D4A4C2C8FA8792B /* ValidationTests.swift */,
+				BE396D40097A40A8A4E4F077 /* ViewModelTests.swift */,
+				6890907019D646078828D989 /* EmailPersistenceTests.swift */,
+				AEAB32CE69C44A8D999ACB66 /* EngineSetupTests.swift */,
+				B9F4CFC924B44CF79D47663B /* AntiDetectionTests.swift */,
+				AA110001AAAA000100000002 /* AutomationFlowTests.swift */,
+				AA110001AAAA000200000002 /* JSSnippetTests.swift */,
+				AA110001AAAA000300000002 /* NavigationWaitTests.swift */,
+			);
+			path = PandaAutomatorTests;
+			sourceTree = "<group>";
+		};
+		337DEEE485D144B7BE758F60 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF26AC53C2544B7DA1BF386F /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7175E0C73C644568A648B225 /* Products */ = {
@@ -76,6 +115,15 @@
 				FBFEB29A64544CF98A4D4ED5 /* PandaAutomatorTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		73D75B184DA747B893CC31FB /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				DC42A4A2AE00428C8486B67D /* AutomationEngine.swift */,
+				E560528C6739412DB272997A /* JSBridgeHandler.swift */,
+			);
+			path = Engine;
 			sourceTree = "<group>";
 		};
 		8F55F0E57C144B3FAE8EEA0F /* PandaAutomator */ = {
@@ -108,21 +156,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0AFF0884F6194398A117A5EE /* ViewModel */ = {
+		ED8935A47D514C0BB606BAE6 = {
 			isa = PBXGroup;
 			children = (
-				3C93F523F30E46E79CCE4AD5 /* AutomationViewModel.swift */,
+				8F55F0E57C144B3FAE8EEA0F /* PandaAutomator */,
+				2ACCF8E9612343EB821BBA43 /* PandaAutomatorTests */,
+				7175E0C73C644568A648B225 /* Products */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		73D75B184DA747B893CC31FB /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				DC42A4A2AE00428C8486B67D /* AutomationEngine.swift */,
-				E560528C6739412DB272997A /* JSBridgeHandler.swift */,
-			);
-			path = Engine;
 			sourceTree = "<group>";
 		};
 		F94FD83866594D02863BB123 /* Models */ = {
@@ -133,47 +173,9 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		337DEEE485D144B7BE758F60 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CF26AC53C2544B7DA1BF386F /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		2ACCF8E9612343EB821BBA43 /* PandaAutomatorTests */ = {
-			isa = PBXGroup;
-			children = (
-				A9F2A74F04134B28A872AADD /* CodeFormatterTests.swift */,
-				0184C5D62D4A4C2C8FA8792B /* ValidationTests.swift */,
-				BE396D40097A40A8A4E4F077 /* ViewModelTests.swift */,
-				6890907019D646078828D989 /* EmailPersistenceTests.swift */,
-				AEAB32CE69C44A8D999ACB66 /* EngineSetupTests.swift */,
-				B9F4CFC924B44CF79D47663B /* AntiDetectionTests.swift */,
-			);
-			path = PandaAutomatorTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AFE75C70D2084724BBA30285 /* PandaAutomator */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3F78BC1BAE5141F28C5BCD8B /* Build configuration list for PBXNativeTarget "PandaAutomator" */;
-			buildPhases = (
-				FEDF489CB3D049359EA5653F /* Sources */,
-				4778976AA8D14B44A1BBA996 /* Frameworks */,
-				94E66CA12FB44B29898C47C0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PandaAutomator;
-			productName = PandaAutomator;
-			productReference = EE054E484DB74EB7877F8B10 /* PandaAutomator.app */;
-			productType = "com.apple.product-type.application";
-		};
 		0F4529446B2A4FC9A5742EDA /* PandaAutomatorTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D53E0D4B24EA4B31A378BE85 /* Build configuration list for PBXNativeTarget "PandaAutomatorTests" */;
@@ -191,6 +193,23 @@
 			productReference = FBFEB29A64544CF98A4D4ED5 /* PandaAutomatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AFE75C70D2084724BBA30285 /* PandaAutomator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F78BC1BAE5141F28C5BCD8B /* Build configuration list for PBXNativeTarget "PandaAutomator" */;
+			buildPhases = (
+				FEDF489CB3D049359EA5653F /* Sources */,
+				4778976AA8D14B44A1BBA996 /* Frameworks */,
+				94E66CA12FB44B29898C47C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PandaAutomator;
+			productName = PandaAutomator;
+			productReference = EE054E484DB74EB7877F8B10 /* PandaAutomator.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,14 +218,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
-					AFE75C70D2084724BBA30285 = {
-						CreatedOnToolsVersion = 16.0;
-					};
 					0F4529446B2A4FC9A5742EDA = {
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = AFE75C70D2084724BBA30285;
+					};
+					AFE75C70D2084724BBA30285 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -241,7 +260,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FEDF489CB3D049359EA5653F /* Sources (App) */ = {
+		5ED18C38B5AB45909DB9C445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0246618FEE546788692696F /* CodeFormatterTests.swift in Sources */,
+				C698A2F589204568A2DF6040 /* ValidationTests.swift in Sources */,
+				71EAA1EBE5B24BA6A3D2B720 /* ViewModelTests.swift in Sources */,
+				ABE1D816E41C4A0580E2607E /* EmailPersistenceTests.swift in Sources */,
+				3A2897820F6F41E08DBBF9D7 /* EngineSetupTests.swift in Sources */,
+				1B8E1F0ADFB646259D20B633 /* AntiDetectionTests.swift in Sources */,
+				AA110001AAAA000100000001 /* AutomationFlowTests.swift in Sources */,
+				AA110001AAAA000200000001 /* JSSnippetTests.swift in Sources */,
+				AA110001AAAA000300000001 /* NavigationWaitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEDF489CB3D049359EA5653F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -255,19 +290,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5ED18C38B5AB45909DB9C445 /* Sources (Tests) */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0246618FEE546788692696F /* CodeFormatterTests.swift in Sources */,
-				C698A2F589204568A2DF6040 /* ValidationTests.swift in Sources */,
-				71EAA1EBE5B24BA6A3D2B720 /* ViewModelTests.swift in Sources */,
-				ABE1D816E41C4A0580E2607E /* EmailPersistenceTests.swift in Sources */,
-				3A2897820F6F41E08DBBF9D7 /* EngineSetupTests.swift in Sources */,
-				1B8E1F0ADFB646259D20B633 /* AntiDetectionTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -278,18 +300,100 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXContainerItemProxy section */
-		FB0EE6AFE802496E9BC0264F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 21565CCBF2EA45FEB5E0F463 /* Project */;
-			proxyType = 1;
-			remoteGlobalIDString = AFE75C70D2084724BBA30285;
-			remoteInfo = PandaAutomator;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin XCBuildConfiguration section */
-		F8AFAD18E3054793A1152403 /* Debug (Project) */ = {
+		31AB327E2A6149BF918440FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandaautomator.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		67ABF2DFDB0E4E8084E084E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandaautomator.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PandaAutomator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PandaAutomator";
+			};
+			name = Release;
+		};
+		C22780C201BC429AA5365BEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandaautomator.app.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PandaAutomator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PandaAutomator";
+			};
+			name = Debug;
+		};
+		F5B98439670947C8B7BFB69F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pandaautomator.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F8AFAD18E3054793A1152403 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -346,13 +450,14 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		FCD511DC78074646A7728C39 /* Release (Project) */ = {
+		FCD511DC78074646A7728C39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -401,121 +506,30 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		F5B98439670947C8B7BFB69F /* Debug (App) */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pandaautomator.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		31AB327E2A6149BF918440FA /* Release (App) */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pandaautomator.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		C22780C201BC429AA5365BEA /* Debug (Tests) */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pandaautomator.app.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PandaAutomator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PandaAutomator";
-			};
-			name = Debug;
-		};
-		67ABF2DFDB0E4E8084E084E6 /* Release (Tests) */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pandaautomator.app.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PandaAutomator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PandaAutomator";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42C3747355D44F23B38EDE81 /* Build configuration list for PBXProject "PandaAutomator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8AFAD18E3054793A1152403 /* Debug */,
-				FCD511DC78074646A7728C39 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		3F78BC1BAE5141F28C5BCD8B /* Build configuration list for PBXNativeTarget "PandaAutomator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F5B98439670947C8B7BFB69F /* Debug */,
 				31AB327E2A6149BF918440FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42C3747355D44F23B38EDE81 /* Build configuration list for PBXProject "PandaAutomator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8AFAD18E3054793A1152403 /* Debug */,
+				FCD511DC78074646A7728C39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -530,7 +544,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
 	};
 	rootObject = 21565CCBF2EA45FEB5E0F463 /* Project object */;
 }
