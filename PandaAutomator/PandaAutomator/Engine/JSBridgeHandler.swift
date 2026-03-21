@@ -9,8 +9,8 @@ final class JSBridgeHandler: NSObject, WKScriptMessageHandler {
         _ userContentController: WKUserContentController,
         didReceive message: WKScriptMessage
     ) {
-        let body = message.body as? String ?? "\(message.body)"
         Task { @MainActor in
+            let body = message.body as? String ?? "\(message.body)"
             self.onLog?(body)
         }
     }
