@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 1 UI context updated — portrait fix, wallpaper, borders, log box decided
-last_updated: "2026-03-20T23:59:46.647Z"
+stopped_at: Completed 01-03-PLAN.md — portrait lock, layout fix, dynamic border colors
+last_updated: "2026-03-21T00:08:59.895Z"
 last_activity: 2026-03-18 — Xcode build now succeeds on macOS; user is running the Phase 1 checklist
 progress:
   total_phases: 3
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 4
+  completed_plans: 4
   percent: 0
 ---
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-foundation P01 | 5min | 2 tasks | 19 files |
 | Phase 01-foundation P00 | 20 | 1 tasks | 8 files |
 | Phase 01-foundation P02 | 2min | 1 tasks | 7 files |
+| Phase 01-foundation P03 | 6min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -71,6 +72,8 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: TEST_HOST set to PandaAutomator app so XCTests can @testable import PandaAutomator and access @MainActor classes
 - [Phase 01-foundation]: GeometryReader used to constrain Form to 50% height when log area is visible — avoids SwiftUI flexible height layout issues
 - [Phase 01-foundation]: onChange guard (formatted != newValue) prevents infinite loop in dash-formatting handler — formatCodeWithDashes is idempotent but unconditional call triggers re-render cycle
+- [Phase 01-foundation]: Portrait lock via INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone in build settings (not Info.plist) because GENERATE_INFOPLIST_FILE = YES
+- [Phase 01-foundation]: Border color as computed property reacting to isRunning, isEmpty, and validation — no separate @State needed
 
 ### Pending Todos
 
@@ -86,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-20T23:59:46.637Z
-Stopped at: Phase 1 UI context updated — portrait fix, wallpaper, borders, log box decided
-Resume file: .planning/phases/01-foundation/01-CONTEXT.md
+Last session: 2026-03-21T00:08:59.891Z
+Stopped at: Completed 01-03-PLAN.md — portrait lock, layout fix, dynamic border colors
+Resume file: None
