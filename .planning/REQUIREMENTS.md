@@ -18,15 +18,15 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **AUTO-01**: App creates a hidden WKWebView attached to the window hierarchy
 - [x] **AUTO-02**: App injects anti-detection (navigator.webdriver override at documentStart, clean Mobile Safari user agent)
-- [ ] **AUTO-03**: App navigates to pandaexpress.com/feedback and enters survey code chunks
-- [ ] **AUTO-04**: App selects first radio option ("Highly Satisfied") for all rating questions
-- [ ] **AUTO-05**: App selects "No" for single Yes/No radio questions to minimize form
-- [ ] **AUTO-06**: App checks first 2 checkboxes on checkbox pages
-- [ ] **AUTO-07**: App fills textareas with positive feedback text
-- [ ] **AUTO-08**: App fills text inputs with user's email on email pages
-- [ ] **AUTO-09**: App clicks Next button and waits for page load between pages
-- [ ] **AUTO-10**: App detects completion (thank-you page) and stops
-- [ ] **AUTO-11**: App adds random 0.5-1.5s delays between actions
+- [x] **AUTO-03**: App navigates to pandaexpress.com/feedback and enters survey code chunks
+- [x] **AUTO-04**: App selects first radio option ("Highly Satisfied") for all rating questions
+- [x] **AUTO-05**: App selects "No" for single Yes/No radio questions to minimize form
+- [x] **AUTO-06**: App checks first 2 checkboxes on checkbox pages
+- [x] **AUTO-07**: App fills textareas with positive feedback text
+- [x] **AUTO-08**: App fills text inputs with user's email on email pages
+- [x] **AUTO-09**: App clicks Next button and waits for page load between pages
+- [x] **AUTO-10**: App detects completion (thank-you page) and stops
+- [x] **AUTO-11**: App adds random 0.5-1.5s delays between actions
 
 ### Feedback & Logging
 
@@ -81,15 +81,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FORM-04 | Phase 1 | Complete |
 | AUTO-01 | Phase 1 | Complete |
 | AUTO-02 | Phase 1 | Complete |
-| AUTO-03 | Phase 2 | Pending |
-| AUTO-04 | Phase 2 | Pending |
-| AUTO-05 | Phase 2 | Pending |
-| AUTO-06 | Phase 2 | Pending |
-| AUTO-07 | Phase 2 | Pending |
-| AUTO-08 | Phase 2 | Pending |
-| AUTO-09 | Phase 2 | Pending |
-| AUTO-10 | Phase 2 | Pending |
-| AUTO-11 | Phase 2 | Pending |
+| AUTO-03 | Phase 2 | Complete |
+| AUTO-04 | Phase 2 | Complete |
+| AUTO-05 | Phase 2 | Complete |
+| AUTO-06 | Phase 2 | Complete |
+| AUTO-07 | Phase 2 | Complete |
+| AUTO-08 | Phase 2 | Complete |
+| AUTO-09 | Phase 2 | Complete |
+| AUTO-10 | Phase 2 | Complete |
+| AUTO-11 | Phase 2 | Complete |
 | LOG-01 | Phase 3 | Pending |
 | LOG-02 | Phase 3 | Pending |
 | LOG-03 | Phase 3 | Pending |
